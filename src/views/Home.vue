@@ -1,5 +1,6 @@
 <template>
 	<div class="container">
+		<mavon-editor v-model="value"/>
 		<el-row :gutter="20">
 			<el-col :span="12" :offset="6">
 				<el-input v-model="input" class="search-input" placeholder="输入查询内容" :suffix-icon="searchIcon" clearable></el-input>
