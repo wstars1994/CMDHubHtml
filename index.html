@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>命令百科</title>
+		<!-- 引入element样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+		<style>
+		.el-select .el-input {
+			width: 110px;
+		}
+	  	.input-with-select .el-input-group__prepend {
+	   		background-color: #fff;
+	  	}
+		.cmd-list{
+			margin-top: 10px;
+			cursor: pointer;
+			text-align: left;
+		}
+		.cmd-list li{
+			float: left;
+			margin-right: 10px;
+		}
+		.cmd-list li i{
+			font-size: 1.8rem;
+		}
+		.cmd-list li span{
+			font-size: 0.9rem;
+			color: darkgray;
+			position: relative;
+			top:-4px;
+			margin-left: 5px;
+		}
+		.fa-windows{
+			color: #0A7ED2;
+		}
+		h2{
+			font-weight: 400;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<!-- 引入头部 -->
+			<ch-header></ch-header>
+			<div class="main-container">
+				<el-row :gutter="20">
+					<el-col :span="12" :offset="6">
+						<el-input v-model="input" class="search-input" placeholder="命令或功能" suffix-icon="el-icon-search" clearable></el-input>
+					</el-col>
+					<!--<el-col :span="12">
+						<ul class="cmd-list">
+							<li><i class="fa fa-windows"></i><span></span></li>
+							<li><i class="fa fa-linux"></i><span></span></li>
+						</ul>	
+					</el-col>-->
+				</el-row>
+				<h2>常用命令</h2>
+			</div>
+		</div>
+	</body>
+	<!-- 引入Vue -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+	<!-- 引入element组件库 -->
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: function() {
+				return {
+					input:'',
+					select:''
+				}
+			}
+		});
+	</script>
+
+</html>
