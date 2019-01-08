@@ -37,8 +37,9 @@
 		.fa-windows{
 			color: #0A7ED2;
 		}
-		h2{
+		h3{
 			font-weight: 400;
+			text-align: left;
 		}
 		</style>
 	</head>
@@ -49,9 +50,10 @@
 			<ch-header></ch-header>
 			<div class="main-container">
 				<el-row :gutter="20">
-					<el-col :span="12" :offset="6">
+					<el-col :span="20">
 						<el-input v-model="input" class="search-input" placeholder="命令或功能" suffix-icon="el-icon-search" clearable></el-input>
 					</el-col>
+					
 					<!--<el-col :span="12">
 						<ul class="cmd-list">
 							<li><i class="fa fa-windows"></i><span></span></li>
@@ -59,7 +61,12 @@
 						</ul>	
 					</el-col>-->
 				</el-row>
-				<h2>常用命令</h2>
+				<el-row :gutter="20">
+					<el-col :span="20" style="margin-top: 5px;">
+						<el-tag style="margin-right: 5px;cursor: pointer;" v-for="t in hotCMDList" size="mini" :key="t.id">{{t.name}}</el-tag>
+					</el-col>
+				</el-row>
+				<h3>常用命令</h3>
 			</div>
 		</div>
 	</body>
@@ -74,7 +81,20 @@
 			data: function() {
 				return {
 					input:'',
-					select:''
+					select:'',
+					hotCMDList:[{
+						id:1,
+						name:"ls"
+					},{
+						id:2,
+						name:"npm"
+					},{
+						id:3,
+						name:"vim"
+					},{
+						id:4,
+						name:"cd"
+					}]
 				}
 			}
 		});
